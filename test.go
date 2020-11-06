@@ -2,13 +2,14 @@ package main
 
 import (
 
-	"github.com/barnex/cuda5/cu"
-	_ "github.com/mumax/3/cuda"
 	"fmt"
 	"C"
 	"strconv"
 	"unsafe"
 	"os/exec"
+
+
+	"github.com/barnex/cuda5/cu"
 )
 
 func main() {
