@@ -1,5 +1,6 @@
 package main
-import(
+
+import (
 
 	"github.com/barnex/cuda5/cu"
 	_ "github.com/mumax/3/cuda"
@@ -10,7 +11,7 @@ import(
 	"os/exec"
 )
 
-func main(){
+func main() {
 	// This must be called if this is the first time the API is being called
 	// Must always be zero
 	cu.Init(0);
